@@ -1,0 +1,388 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid tomato; */
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --bordes: #212121;
+    --busqueda: #121212;
+    --lupa: #313131;
+    --ligero: #373737;
+    --main:  #181818;
+    --info-canales: #9a9a9a
+}
+
+html{
+    font-size: 62.5%;
+}
+
+a, button{
+    cursor: pointer;
+}
+
+body{
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "nav categorias"
+    "nav main";
+    grid-template-columns: 16% 84%;
+
+}
+
+/* INICIO HEADER */
+
+header{
+    width: 100%;
+    background-color: var(--bordes);
+    grid-area: header;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.header--left{
+    display: flex;
+    align-items: center;
+}
+
+.burger-menu{
+    background: none;
+    border: none;
+    margin: 0 20px;
+    width: 30px;
+    height: 20px;
+    background-image: url("https://img.icons8.com/material-outlined/24/ffffff/menu--v1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo{
+    margin-left: 10px;
+    color: aliceblue;
+    background-size: cover;
+    width: 100px;
+    height: 70px;
+    background-image: url("Imagen1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+}
+
+.header--center{
+    display: flex;
+    align-items: center;
+    width: 45%;
+
+}
+
+.header--center input{
+    height: 35px;
+    width: 100%;
+    background-color: var(--busqueda);
+    border: none;
+    padding-left: 10px; 
+    color: aliceblue;
+}
+.header--center input:placeholder-shown{
+    font-size: medium;
+}
+.header--center input:focus{
+    border: 1px solid blue;
+    outline: none;
+}
+.header--center .search{
+    background-color: var(--lupa);
+    background-image: url("https://img.icons8.com/material-outlined/24/ffffff/search--v1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    height: 35px;
+    width: 60px;
+}
+
+ .micro{
+    margin-left: 10px;
+    border-radius: 500px;
+    background-color: var(--busqueda);
+    border: none;
+    height: 35px;
+    width: 40px;
+    padding: 5px;
+    background-image: url("https://img.icons8.com/fluency-systems-filled/48/ffffff/microphone.png");
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.header--right{
+    display: flex;
+    align-items: center;
+}
+
+.iconos{
+    background: none;
+    border: none;
+    margin: 0 10px;
+    width: 30px;
+    height: 20px;
+}
+.iconos:first-child{
+    background-image: url("https://img.icons8.com/material-rounded/24/ffffff/camcorder-pro.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-size: 25px;
+
+}
+
+.iconos:nth-child(2){
+    background-image: url("https://img.icons8.com/material-outlined/24/ffffff/small-icons--v1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+}
+.iconos:nth-child(3){
+    background-image: url("https://img.icons8.com/material-outlined/24/ffffff/appointment-reminders--v1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.iconos:last-child{
+    width: 36px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: aquamarine;
+}
+
+/* INICIO NAVBAR */
+
+nav{
+    width: 100%;
+    background-color: var(--bordes);
+    grid-area: nav;
+}
+.nav-opciones{
+    padding: 1+0px 0;
+    list-style: none;
+    border-bottom: 2px solid var(--lupa);
+}
+.nav-opciones li:hover{
+    background-color: var(--lupa);
+}
+.nav-opciones li img{
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    display: inline;
+
+}
+
+.nav-opciones li{
+    width: 100%;
+    height:40px;
+    color: white;
+    font-size: 1.4rem;
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.acceder{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.acceder p{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.acceder button{
+    margin-top: 15px;
+    background: none;
+    border: 2px solid #3ea6ff;
+    color: #3ea6ff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.acceder button img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+
+/* INICIO CATEGORIAS */
+
+section{
+    grid-area:categorias;
+    background-color: var(--bordes);
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--lupa);
+    border-bottom: 1px solid var(--lupa);
+
+}
+
+section ul{
+    display: flex;
+    list-style: none;
+}
+
+section ul li{
+    margin: 10px;
+    border: 1px solid black;
+    padding:  7px 12px;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: white;
+    background-color: var(--lupa);
+    border: 2px solid var(--ligero);
+
+}
+section ul li:first-child{
+    background-color: white;
+    color: black;
+    margin-left: 30px;
+}
+
+/* INICIO MAIN */
+
+main{
+    background-color: var(--main);
+    grid-area: main;
+
+   
+}
+
+main ul {
+    display: grid;
+    padding: 20px 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    list-style: none;
+    gap: 20px;
+    justify-items: center;
+    
+}
+
+main ul li{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.video{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    background-image: url("https://static.platzi.com/media/blog/wallpaper-pc-a07b6880-351b-410c-a4dc-9fbafdc420b2.png");
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.info-videos{
+    width: 80%;
+    height: 40%;
+    display: grid;
+    grid-template-areas: 
+    "icono titulo"
+    "vacio canal";
+    grid-template-columns: 45px 80%;
+    grid-auto-rows: 40px ;
+    margin-top: 10px;
+}   
+
+.i-canal{
+    grid-area: icono;
+    width: 36px;
+    height: 35px;
+    border-radius: 100%;
+    background-image: url("https://pbs.twimg.com/profile_images/1278376724900786182/zXbHm9d-_400x400.jpg");
+    background-position: center;
+    background-size: contain;
+}
+.titulo{
+    font-size: 1.6rem;
+    color: white;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.canal{
+    grid-area: canal;
+    font-size: 1.2rem;
+    color: var(--info-canales);
+    line-height: 18px;
+}
+
+.canal i{
+    display: flex;
+    height: 15px;
+    width: 15px;
+
+    background-image: url("https://img.icons8.com/glyph-neue/64/9a9a9a/tiktok-verified-account.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto 0 auto 5px;
+}
+.canal--nombre{
+    display: flex;
+}
+
+@media (max-width: 1100px) {
+   main ul{
+    grid-template-columns: repeat(3, 1fr);
+   }
+}
+@media (max-width: 915px) {
+
+    body{
+        grid-template-areas: 
+        "header"
+        "categorias"
+        "main";
+        grid-template-columns: 100%;
+    }
+    
+   nav{
+       display: none;
+   }
+   /* .info-videos{
+    margin-left: 30px;
+    } */
+}
+@media (max-width: 640px) {
+
+    main ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .video{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 490px ) {
+
+    main ul{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .info-videos{
+        margin-left: 65px;
+    }
+}
